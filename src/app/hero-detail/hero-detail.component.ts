@@ -18,6 +18,7 @@ export class HeroDetailComponent implements OnInit {
     private router: Router
   ) { }
   ngOnInit() {
+    console.log('branch 1 changes... 1st time');
     this.getHero();
   }
   getHero(): void {
