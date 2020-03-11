@@ -28,6 +28,7 @@ export class HeroDetailComponent implements OnInit {
       .subscribe(hero => { this.hero = hero; console.log(this.hero)});
   }
   goBack(): void {
+    console.log('to create pull request');
     // this.location.back();
     // this.router.navigate(['/heroes']);
     // this.router.navigate(['../../heroes',],{relativeTo:this.route})
