@@ -20,6 +20,7 @@ export class HeroDetailComponent implements OnInit {
   ngOnInit() {
     console.log('branch 1 changes... 1st time');
     this.getHero();
+    console.log('changes to both branches via local branch');
   }
   getHero(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id'), 0);
