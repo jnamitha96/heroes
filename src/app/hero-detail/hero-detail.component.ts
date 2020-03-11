@@ -35,6 +35,7 @@ export class HeroDetailComponent implements OnInit {
     this.router.navigate(['../../heroes', { id: this.hero.id }], { relativeTo: this.route });
   }
   save(): void {
+    console.log('to check git fetch');
     this.heroService.updateHero(this.hero)
       .subscribe(() => this.goBack());
   }
