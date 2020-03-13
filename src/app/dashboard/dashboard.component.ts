@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     console.log('changes in master');
+    console.log(' changes in lbranch1');
     this.getHeroes();
   }
   getHeroes(): void {
