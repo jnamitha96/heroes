@@ -20,6 +20,7 @@ export class HeroDetailComponent implements OnInit {
   ngOnInit() {
     console.log('branch 1 changes... 1st time');
     this.getHero();
+    console.log('branch 1 individual changes');
     console.log('changes to both branches via local branch');
   }
   getHero(): void {

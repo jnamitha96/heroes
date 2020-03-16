@@ -13,12 +13,15 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     console.log('changes in master');
+    console.log('some more changes in branch1');
     this.getHeroes();
   }
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes.slice(0,4));
-      console.log('hello');
+
+
+      
   }
 
 }
