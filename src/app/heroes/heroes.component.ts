@@ -8,24 +8,24 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-   heroes : Hero[];
+  heroes: Hero[];
   public selectedId;
 
-  constructor(private heroService: HeroService,private route : ActivatedRoute) { }
+  constructor(private heroService: HeroService, private route: ActivatedRoute) { }
   ngOnInit() {
     this.getHeroes();
-    this.route.paramMap.subscribe((params : ParamMap)=>{
-     let id = parseInt(params.get('id'));
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      const id = parseInt(params.get('id'), 0);
       this.selectedId = id;
-    })
+    });
   }
-  
-  isSelected(hero){
+
+  isSelected(hero) {
     return this.selectedId === hero.id;
   }
-  getHeroes(): void {   
-    this.heroService.getHeroes().subscribe(heroes =>{ this.heroes = heroes});
-    
+  getHeroes(): void {
+    this.heroService.getHeroes().subscribe(heroes => { this.heroes = heroes; });
+
   }
   add(name: string): void {
     name = name.trim();
@@ -40,6 +40,6 @@ export class HeroesComponent implements OnInit {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero).subscribe();
   }
-  
+
 
 }
